@@ -6,8 +6,8 @@ pipeline {
 				stage('Deploy') {
 					agent any
 					steps {
-						echo $PWD
-						echo $(ls)
+						echo "$PWD"
+						echo "$ls"
 						sh './jenkins/scripts/deploy.sh'
 						input message: 'Finished using the web site? (Click "Proceed" to continue)'
 						sh './jenkins/scripts/kill.sh'
